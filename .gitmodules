@@ -1,0 +1,3 @@
+[submodule "ttrpcurl"]
+	path = ttrpcurl
+	url = https://github.com/katexochen/ttrpcurl

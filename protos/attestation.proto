@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package attestation;
+
+enum Tee {
+    SEV = 0;
+    SGX = 1;
+    SNP = 2;
+    TDX = 3;
+    Sample = 4;
+    AzSnpVtpm = 5;
+}
+
+message AttestationRequest {
+    Tee tee = 1;
+    string nonce = 2;
+    string evidence = 3;
+}
+message AttestationResponse {
+    string attestation_results = 1;
+}
+
+message SetPolicyRequest {
+    string input = 1;
+}
+message SetPolicyResponse {}
+
+service AttestationService {
+    rpc AttestationEvaluate(AttestationRequest) returns (AttestationResponse) {};
+    rpc SetAttestationPolicy(SetPolicyRequest) returns (SetPolicyResponse) {};
+}

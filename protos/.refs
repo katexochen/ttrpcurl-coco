@@ -1,6 +1,5 @@
-confidential-containers/guest-components fe8fb1a
-confidential-containers/cloud-api-adaptor 1297e19
-confidential-containers/simple-kbs c76b135
-confidential-containers/enclave-cc 6b849f2
-confidential-containers/kbs 8ca7c4d
 confidential-containers/attestation-service 8945823
+confidential-containers/cloud-api-adaptor aedfc75
+confidential-containers/guest-components 7e504bb
+confidential-containers/kbs 8ca7c4d
+confidential-containers/simple-kbs c76b135

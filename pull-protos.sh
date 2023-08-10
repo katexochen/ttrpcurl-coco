@@ -27,6 +27,8 @@ function main() {
 
     targetPath="$(pwd)/protos"
     pushd "$(mktemp -d)" > /dev/null
+    rm -rf "${targetPath}"
+    mkdir -p "${targetPath}"
 
     for repo in $repoNames; do
         echo "Downloading protos from ${repo}"
@@ -75,6 +77,8 @@ function main() {
         popd > /dev/null
         rm -rf "${repo}"
     done
+
+    sort -o "${targetPath}/.refs" "${targetPath}/.refs"
 }
 
 main

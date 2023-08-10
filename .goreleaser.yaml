@@ -8,7 +8,8 @@ gomod:
   proxy: true
 
 builds:
-  - main: ./cmd/ttrpcurl
+  - binary: ttrpcurl
+    main: ./cmd/ttrpcurl
     dir: ./ttrpcurl
     tags:
       - embed
@@ -20,7 +21,9 @@ builds:
       - -s
       - -w
       - -buildid=
+      - -X "main.description=This edition includes common protos from the Confidential Containers project. You can use describe to list them."
       - -X main.version={{.Version}}
+      - -X "main.edition=Confidential Containers"
       - -X main.commit={{.Commit}}
       - -X main.date={{.Date}}
     goarch:
